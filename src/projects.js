@@ -1,4 +1,4 @@
-const Projects = function () {
+const Projects = function (name) {
     const taskList = [];
 
     function addTask(task) {
@@ -11,7 +11,7 @@ const Projects = function () {
         taskList.length = 0;
         taskList.push(taskList.concat(temp));
     }
-    return {taskList, addTask, removeTask};
+    return {taskList, addTask, removeTask, name};
 }
 
 export default Projects;
