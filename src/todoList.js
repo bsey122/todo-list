@@ -21,12 +21,13 @@ const TodoList = (function () {
             if (element.name === task.label) {
                 element.addTask(task);
                 return
-            } else {
-                const project = Projects(task.label);
-                project.addTask(task);
-                addProject(project);
-                return
             }
+        }
+        if (!projectList.includes(task.label)) {
+            const project = Projects(task.label);
+            project.addTask(task);
+            addProject(project);
+            return
         }
     }
 
