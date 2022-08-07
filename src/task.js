@@ -4,7 +4,7 @@ const Todo = function (title = '', description = '', priority = false, label = '
         description,
         priority,
         label,
-        id: Date.now().toString(),
+        id: Date.now().toString(36) + Math.random().toString(36),
     }
     return Object.assign({}, state);
 }
