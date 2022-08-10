@@ -31,7 +31,19 @@ const TodoList = (function () {
         }
     }
 
-    return {addProject, projectList, removeProject, addTaskToProject}
+    function getTask(taskId) {
+        let result;
+        for (const {taskList} of projectList) {
+            for (const task of taskList) {
+                if (task.id === taskId) {
+                    result = task;
+                }
+            }
+        }
+        return result;
+    }
+
+    return {addProject, projectList, removeProject, addTaskToProject, getTask}
 })();
 
 export default TodoList;
