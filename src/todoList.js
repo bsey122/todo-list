@@ -43,7 +43,12 @@ const TodoList = (function () {
         return result;
     }
 
-    return {addProject, projectList, removeProject, addTaskToProject, getTask}
+    function getProject(projectName) {
+        const result = projectList.find(({name}) => name === projectName);
+        return result;
+    }
+
+    return {addProject, projectList, removeProject, addTaskToProject, getTask, getProject}
 })();
 
 export default TodoList;
