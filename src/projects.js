@@ -9,7 +9,7 @@ const Projects = function (name) {
             return ele.id !== task.id;
         });
         taskList.length = 0;
-        taskList.push(taskList.concat(temp));
+        taskList.push(...temp);
     }
     return {taskList, addTask, removeTask, name};
 }
