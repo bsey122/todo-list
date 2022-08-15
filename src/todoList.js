@@ -31,6 +31,16 @@ const TodoList = (function () {
         }
     }
 
+    function removeTaskFromProject(task) {
+        for (let index = 0; index < projectList.length; index++) {
+            const element = projectList[index];
+            if (element.name === task.label) {
+                element.removeTask(task);
+            }
+            
+        }
+    }
+
     function getTask(taskId) {
         let result;
         for (const {taskList} of projectList) {
@@ -48,7 +58,7 @@ const TodoList = (function () {
         return result;
     }
 
-    return {addProject, projectList, removeProject, addTaskToProject, getTask, getProject}
+    return {addProject, projectList, removeProject, addTaskToProject, getTask, getProject, removeTaskFromProject}
 })();
 
 export default TodoList;
